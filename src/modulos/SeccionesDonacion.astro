@@ -1,5 +1,6 @@
 ---
 // SeccionDonacion.astro
+import { URL_PAYPHONE, URL_PEIGO, URL_PAYPAL } from "../app/constantes.ts";
 ---
 
 <!-- MODAL -->
@@ -67,7 +68,7 @@
 
       <!-- PayPhone -->
       <a
-        href="https://pay.payphonetodoesposible.com/TU_LINK"
+        href={URL_PAYPHONE}
         target="_blank"
         class="
           group
@@ -106,7 +107,7 @@
 
       <!-- Peigo -->
       <a
-        href="https://TU-LINK-PEIGO"
+        href={URL_PEIGO}
         target="_blank"
         class="
           group
@@ -133,7 +134,7 @@
             </h3>
 
             <p class="text-zinc-400 mt-2 text-sm">
-              Pagos desde billetera digital.
+              Pagos desde billetera digital - INHABILITADO..
             </p>
           </div>
 
@@ -145,7 +146,7 @@
 
       <!-- PayPal -->
       <a
-        href="https://www.paypal.com/donate/?hosted_button_id=TU_ID"
+        href={URL_PAYPAL}
         target="_blank"
         class="
           group
@@ -172,7 +173,7 @@
             </h3>
 
             <p class="text-zinc-400 mt-2 text-sm">
-              Donaciones internacionales.
+              Donaciones internacionales - INHABILITADO.
             </p>
           </div>
 
