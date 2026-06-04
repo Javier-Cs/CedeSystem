@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+
+const proyectos = [
+  {
+    titulo: "Api Nottyn",
+    descripcion:
+      "Api REST desarrollada en ASP.NET Core con autenticación JWT y arquitectura limpia.",
+    tecnologias: ["C#", ".NET", "SQL Server"],
+    estado: "Activo",
+    url: "http://localhost:4321/",
+  },
+  {
+    titulo: "Galilea Streaming",
+    descripcion:
+      "Sistema de streaming optimizado con Nginx Reverse Proxy y protección de tráfico.",
+    tecnologias: ["Nginx", "Linux", "Docker"],
+    estado: "Producción",
+    url: "http://localhost:4322/",
+  },
+  {
+    titulo: "Panel Administrativo",
+    descripcion:
+      "Dashboard moderno para administración de usuarios y métricas.",
+    tecnologias: ["Astro", "React", "Tailwind"],
+    estado: "Beta",
+    url: "http://localhost:4323/",
+  },
+  {
+    titulo: "Sistema de Ventas",
+    descripcion:
+      "Aplicación de control de ventas, clientes y deudas con Dapper.",
+    tecnologias: ["SQL Server", "Dapper", "ASP.NET"],
+    estado: "Desarrollo",
+    url: "http://localhost:4324/",
+  },
+];
+---
+
+<section class="min-h-screen bg-black text-white px-4 py-10 flex flex-col items-center">
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="w-full max-w-7xl border border-zinc-500 p-8 md:p-10">
+    <!-- TITULO -->
+    <div class="text-center mb-10">
+      <h1 class="text-5xl md:text-6xl font-light tracking-wide mb-6">
+        proyectos
+      </h1>
+
+      <p class=" text-zinc-300 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+        desarrollo backend, apis modernas y sistemas web
+        construidos con tecnologías actuales.
+      </p>
+    </div>
+
+    <!-- GRID DE CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      {proyectos.map((proyecto) => (
+        <article class="border border-zinc-700 bg-zinc-950 p-6 flex flex-col justify-between transition-all duration-300 hover:border-white hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <h2 class="text-2xl font-light">
+                {proyecto.titulo}
+              </h2>
+
+              <span class="text-xs border border-zinc-600 px-2 py-1 text-zinc-300">
+                {proyecto.estado}
+              </span>
+            </div>
+
+            <p class=" text-zinc-400 leading-relaxed mb-8">
+              {proyecto.descripcion}
+            </p>
+            <p class="mt-10 text-red-500">
+              á é í ó ú ñ Ñ
+            </p>
+
+            <!-- TECNOLOGIAS -->
+            <div class="flex flex-wrap gap-2">
+              {proyecto.tecnologias.map((tech) => (
+                <span class="text-sm border border-zinc-700 px-3 py-1 text-zinc-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- BOTON -->
+          <button class="mt-10 border border-zinc-500 py-3 text-sm tracking-widest uppercase transition-all duration-300 hover:bg-white hover:text-black">
+            <a href={proyecto.url} target="_blank">ver proyecto</a>
+          </button>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

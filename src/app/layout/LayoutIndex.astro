@@ -1,12 +1,9 @@
 ---
 
 // implementacion de packege 
-import pkg from '../../package.json' assert {type: 'json'};
+import pkg from '../../../package.json' assert {type: 'json'};
 
-//import FooterBase from "@/components/FooterBase.astro";
-import {url} from '../app/constantes.ts';
-
-import {SITE_TITLE} from '../app/constantes';
+import {SITE_TITLE, url} from '../constantes';
 const {class : clazz} = Astro.props;
 ---
 
@@ -18,7 +15,7 @@ const {class : clazz} = Astro.props;
 		<title>{SITE_TITLE}</title>
 
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link
 			rel="sitemap"
 			type="application/xml"                                                              
@@ -56,8 +53,9 @@ const {class : clazz} = Astro.props;
 			'dark:scrollbar-track-slate-100 dark:scrollbar-thumb-gray-200',
 		]}
 	>
-		<slot />
+		<slot/>	
 	</body>
+    
 	
 </html>
 
