@@ -1,4 +1,4 @@
----
+ ---
 import '../styles/global.css';
 
 const proyectos = [
@@ -12,13 +12,31 @@ const proyectos = [
     url: "https://github.com/Javier-Cs",
   },
   {
+    titulo: "Borrador",
+    descripcion:
+      "pagina de pruebas de proyectos web en linea y observacion.",
+    tecnologias: ["Estado de desarrollo"],
+    estado: "estado de prueba",
+    textoBoton: "Herramientasd y tecnologías utilizadas.",
+    url: "https://borrador.cedesystem.com/",
+  },
+  {
+    titulo: "RadioSys",
+    descripcion:
+      "consumo de Api REST publica (radio-browser) uso de filtros y paginacion.",
+    tecnologias: ["Nginx", "Angular 21", "SRP", "Cloudflare", "Certbot"],
+    estado: "Desarrollo",
+    textoBoton: "Herramientasd y tecnologías utilizadas.",
+    url: "https://github.com/Javier-Cs/WebRadiosys.git",
+  },
+  {
     titulo: "Api Nottyn",
     descripcion:
       "Api REST desarrollada en ASP.NET Core con autenticación JWT y arquitectura limpia, tipo bloque de notas con usuarios incocnitos y con cuenta .",
     tecnologias: ["C#", "ASP.NET Core", "JWT", "Nginx", "SQL Server", "Dapper", "Cloudflare", "Certbot"],
     estado: "Desarrollo",
     textoBoton: "Herramientasd y tecnologías utilizadas.",
-    url: "http://localhost:4321/",
+    url: "https://github.com/Javier-Cs/Nottyn.git",
   },
   {
     titulo: "Api Sistema Legumfrut",
@@ -66,6 +84,18 @@ const proyectos = [
     url: "https://cristianhomeimprovement.net/",
   }
 ];
+
+
+const estadoClasses = {
+  "Producción": "bg-green-500/15 text-green-400 border border-green-500/20",
+  "Desarrollo": "bg-amber-500/15 text-amber-400 border border-amber-500/20",
+  "estado de prueba": "bg-red-500/15 text-red-400 border border-red-500/20",
+};
+
+---
+
+
+
 ---
 <section class="min-h-screen bg-[#09090b] text-white py-10 px-6">
   <div class="max-w-7xl mx-auto">
@@ -76,7 +106,7 @@ const proyectos = [
     <div class="text-center mb-10">
       
       <h1 class="mt-6 text-5xl md:text-7xl font-bold tracking-tight">
-        Proyectos
+        PROYECTOS
       </h1>
 
       <p class="mt-6 max-w-3xl mx-auto text-zinc-400 text-lg md:text-xl">
@@ -103,14 +133,9 @@ const proyectos = [
               </h2>
 
               <span
-                class={`
-                  px-3 py-1 rounded-full text-xs font-medium
-                  ${
-                    proyecto.estado === "Producción"
-                    ? "bg-green-500/15 text-green-400 border border-green-500/20"
-                    : "bg-amber-500/15 text-amber-400 border border-amber-500/20"
-                  }
-                `}
+                class={`px-3 py-1 rounded-full text-xs font-medium ${
+                  estadoClasses[proyecto.estado] ?? "bg-gray-500/15 text-gray-400 border border-gray-500/20"
+                }`}
               >
                 {proyecto.estado}
               </span>
