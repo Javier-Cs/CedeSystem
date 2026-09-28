@@ -1,11 +1,11 @@
- ---
+---
 import '../styles/global.css';
 
 const proyectos = [
   {
     titulo: "Repositorio",
     descripcion:
-      "La cuna de los proyectos, donde comparto mi código y colaboro con la comunidad.",
+      "La fuente",
     tecnologias: ["Amigable", "Divertido", "Inpuntual"],
     estado: "En Desarrollo Continuo",
     textoBoton: "Cosas de mi.",
@@ -29,28 +29,29 @@ const proyectos = [
     textoBoton: "Herramientasd y tecnologías utilizadas.",
     url: "https://github.com/Javier-Cs/WebRadiosys.git",
   },
+  
   {
-    titulo: "Api Nottyn",
-    descripcion:
-      "Api REST desarrollada en ASP.NET Core con autenticación JWT y arquitectura limpia, tipo bloque de notas con usuarios incocnitos y con cuenta .",
-    tecnologias: ["C#", "ASP.NET Core", "JWT", "Nginx", "SQL Server", "Dapper", "Cloudflare", "Certbot"],
-    estado: "Desarrollo",
-    textoBoton: "Herramientasd y tecnologías utilizadas.",
-    url: "https://github.com/Javier-Cs/Nottyn.git",
-  },
-  {
-    titulo: "Api Sistema Legumfrut",
-    descripcion: "Sistema de gestión de inventarios y registro de ventas para una empresa de legumbres, con autenticación JWT y arquitectura limpia.",
-    tecnologias: ["C#","Nginx", "Linux", "Cloudflare", "SQL Server", "Dapper", "ASP.NET Core", "Linux", "Certbot"],
+    titulo: "Perfumeria MOE",
+    descripcion: "Pagina Web de perfumeria, presentacion de perfumes de marcas con filtracion por generos.",
+    tecnologias: ["Nginx", "Linux", "Tailwind", "Cloudflare", "JSON", "React",  "Certbot"],
     estado: "Producción",
     textoBoton: "Herramientasd y tecnologías utilizadas.",
-    url: "https://github.com/Javier-Cs/ApiTiendaV1.git",
+    url: "https://moeparfums.cedesystem.com",
+  },
+
+  {
+    titulo: "Sistema LegumSys",
+    descripcion: "Sistema de gestión de inventarios y registro de ventas para una empresa de legumbres, con autenticación JWT y arquitectura limpia.",
+    tecnologias: ["C#","Nginx", "Linux", "Cloudflare", "SQL Server", "Dapper", "ASP.NET Core", "Certbot"],
+    estado: "Producción",
+    textoBoton: "Herramientasd y tecnologías utilizadas.",
+    url: "https://legumfrutsa.com",
   },
   {
     titulo: "PeopleData",
     descripcion:
       "web de consulta de datos personales en genaral.",
-    tecnologias: ["Astro", "Tailwind", "Certbot", "Cloudflare", "Linux", "Certbot"],
+    tecnologias: ["Astro", "Tailwind", "Certbot", "Cloudflare", "Linux"],
     estado: "Producción",
     textoBoton: "Herramientasd y tecnologías utilizadas.",
     url: "https://datospr.cedesystem.com/",
@@ -87,16 +88,13 @@ const proyectos = [
 
 
 const estadoClasses = {
+  "En Desarrollo Continuo": "bg-blue-600/15 text-blue-500 border border-blue-500/20",
   "Producción": "bg-green-500/15 text-green-400 border border-green-500/20",
   "Desarrollo": "bg-amber-500/15 text-amber-400 border border-amber-500/20",
   "estado de prueba": "bg-red-500/15 text-red-400 border border-red-500/20",
 };
-
 ---
 
-
-
----
 <section class="min-h-screen bg-[#09090b] text-white py-10 px-6">
   <div class="max-w-7xl mx-auto">
 
@@ -148,7 +146,7 @@ const estadoClasses = {
 
             <div class="flex flex-wrap gap-1 mb-4">
               {proyecto.tecnologias.map((tech) => (
-                <span class="rounded-full border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs text-zinc-300">
+                <span class="rounded-full border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs text-zinc-1000">
                   {tech}
                 </span>
               ))}
